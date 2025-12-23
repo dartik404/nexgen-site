@@ -31,27 +31,28 @@ export const Store = ({ onPurchase, user }: StoreProps) => {
     !user.hasPremiumAddon
 
   return (
-    <div className="min-h-screen pt-28 pb-20 container mx-auto px-4">
-      <div className="text-center mb-12">
+    <div className="min-h-screen pt-28 pb-20 container mx-auto px-4 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-violet-600/5 to-transparent pointer-events-none" />
+      <div className="text-center mb-12 relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Выберите план</h2>
         <p className="text-gray-500 max-w-md mx-auto">
           Получите доступ к лучшим функциям Nexgen и начните доминировать
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 max-w-6xl mx-auto mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 max-w-6xl mx-auto mb-16 relative z-10">
         {subscriptions.map((sub) => (
           <div
             key={sub.id}
-            className={`relative rounded-2xl p-5 flex flex-col transition-all duration-300
+            className={`relative rounded-2xl p-5 flex flex-col transition-all duration-300 backdrop-blur-sm hover:scale-105 transform
             ${
               sub.recommended
-                ? "bg-violet-600/10 border-2 border-violet-500/50 shadow-lg shadow-violet-600/10"
-                : "bg-white/[0.02] border border-white/5 hover:border-white/10"
+                ? "bg-gradient-to-br from-violet-600/15 to-indigo-600/10 border-2 border-violet-500/50 shadow-lg shadow-violet-600/20"
+                : "bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/5 hover:border-violet-500/30"
             }`}
           >
             {sub.recommended && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-violet-600 text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-lg shadow-violet-600/30">
                 Популярный
               </div>
             )}
@@ -90,9 +91,10 @@ export const Store = ({ onPurchase, user }: StoreProps) => {
         ))}
       </div>
 
-      <h3 className="text-xl font-bold text-center mb-6 text-white">Дополнительно</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-        <div className="bg-gradient-to-br from-amber-500/5 to-transparent rounded-2xl p-6 border border-amber-500/20 relative overflow-hidden">
+      <h3 className="text-xl font-bold text-center mb-6 text-white relative z-10">Дополнительно</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto relative z-10">
+        <div className="bg-gradient-to-br from-amber-500/10 to-transparent rounded-2xl p-6 border border-amber-500/30 relative overflow-hidden backdrop-blur-sm hover:border-amber-500/50 transition-all duration-300 group">
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           <div className="relative z-10">
             <div className="flex justify-between items-start mb-4">
               <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center">
@@ -123,7 +125,8 @@ export const Store = ({ onPurchase, user }: StoreProps) => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-blue-500/5 to-transparent rounded-2xl p-6 border border-blue-500/20 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-blue-500/10 to-transparent rounded-2xl p-6 border border-blue-500/30 relative overflow-hidden backdrop-blur-sm hover:border-blue-500/50 transition-all duration-300 group">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           <div className="relative z-10">
             <div className="flex justify-between items-start mb-4">
               <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
@@ -149,9 +152,9 @@ export const Store = ({ onPurchase, user }: StoreProps) => {
         </div>
       </div>
 
-      <div className="mt-12 flex justify-center">
-        <div className="flex items-center gap-2 text-gray-600 text-xs">
-          <ShieldCheck size={14} />
+      <div className="mt-12 flex justify-center relative z-10">
+        <div className="flex items-center gap-2 text-gray-600 text-xs bg-white/[0.02] px-4 py-2 rounded-lg border border-white/5 backdrop-blur-sm">
+          <ShieldCheck size={14} className="text-emerald-500" />
           <span>Безопасные платежи через Stripe</span>
         </div>
       </div>

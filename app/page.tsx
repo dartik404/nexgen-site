@@ -77,10 +77,11 @@ export default function Home() {
 
   if (initLoading) {
     return (
-      <div className="min-h-screen bg-[#030303] flex items-center justify-center">
-        <div className="flex flex-col items-center gap-3">
-          <div className="w-6 h-6 border-2 border-violet-600 border-t-transparent rounded-full animate-spin" />
-          <span className="text-gray-600 text-xs font-medium uppercase tracking-widest">Загрузка</span>
+      <div className="min-h-screen bg-[#030303] flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-600/10 to-transparent pointer-events-none" />
+        <div className="flex flex-col items-center gap-4 relative z-10">
+          <div className="w-12 h-12 border-3 border-violet-600 border-t-transparent rounded-full animate-spin" />
+          <span className="text-gray-500 text-sm font-medium uppercase tracking-widest">Загрузка</span>
         </div>
       </div>
     )
