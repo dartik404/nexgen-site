@@ -38,8 +38,8 @@ export const Hero = ({ onBuyClick }: HeroProps) => {
     },
     {
       icon: <Cpu size={18} className="text-emerald-400" />,
-      title: "Умный AI-ассистент",
-      desc: "Встроенный ИИ анализирует игровые ситуации и подсказывает оптимальные настройки в реальном времени",
+      title: "Интеллектуальный анализ",
+      desc: "Встроенная система анализирует игровые ситуации и подсказывает оптимальные настройки в реальном времени",
     },
     {
       icon: <Lock size={18} className="text-rose-400" />,
@@ -91,6 +91,8 @@ export const Hero = ({ onBuyClick }: HeroProps) => {
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] pointer-events-none">
         <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-violet-600/10 rounded-full blur-[150px]" />
+        <div className="absolute top-[100px] left-[20%] w-[400px] h-[400px] bg-indigo-600/5 rounded-full blur-[120px]" />
+        <div className="absolute top-[200px] right-[15%] w-[500px] h-[500px] bg-purple-600/5 rounded-full blur-[140px]" />
       </div>
 
       <main className="flex-grow container mx-auto px-4 relative z-10">
@@ -117,12 +119,13 @@ export const Hero = ({ onBuyClick }: HeroProps) => {
 
           <button
             onClick={onBuyClick}
-            className="group relative px-8 py-4 bg-violet-600 hover:bg-violet-500 rounded-xl overflow-hidden transition-all shadow-lg shadow-violet-600/30 hover:shadow-violet-500/40"
+            className="group relative px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 rounded-xl overflow-hidden transition-all shadow-lg shadow-violet-600/30 hover:shadow-violet-500/40 hover:scale-105 transform duration-200"
           >
+            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <div className="relative flex items-center justify-center gap-3">
-              <SparklesIcon size={18} className="text-violet-200" />
+              <SparklesIcon size={18} className="text-white" />
               <span className="text-base font-semibold text-white">Приобрести доступ</span>
-              <ChevronRight size={18} className="text-violet-200 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight size={18} className="text-white group-hover:translate-x-1 transition-transform" />
             </div>
           </button>
 
@@ -156,8 +159,8 @@ export const Hero = ({ onBuyClick }: HeroProps) => {
         <section className="py-20">
           <div className="grid grid-cols-3 gap-6 mb-20">
             {stats.map((stat, i) => (
-              <div key={i} className="text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
+              <div key={i} className="text-center p-6 rounded-2xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/5 backdrop-blur-sm hover:border-violet-500/30 transition-all duration-300 group">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">{stat.value}</div>
                 <div className="text-sm text-gray-500">{stat.label}</div>
               </div>
             ))}

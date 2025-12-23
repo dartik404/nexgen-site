@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   title: "Nexgen Client - Приватный софт нового поколения",
   description:
     "Лучший утилити клиент для Minecraft. Sodium оптимизация, облачные конфиги и защита уровня Kernel-Level.",
-  generator: "v0.app",
   icons: {
     icon: [
       { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: light)" },
