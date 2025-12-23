@@ -198,14 +198,14 @@ export const Hero = ({ onBuyClick }: HeroProps) => {
               { step: "03", icon: <ClockIcon size={20} />, title: "Скачивание", desc: "Загрузите лоадер из кабинета" },
               { step: "04", icon: <CheckCircle2Icon size={20} />, title: "Игра", desc: "Запустите и доминируйте" },
             ].map((item, i) => (
-              <div key={i} className="relative p-6 rounded-2xl bg-white/[0.02] border border-white/5 text-center group">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-violet-600 rounded-full text-xs font-bold">
+              <div key={i} className="relative p-6 rounded-2xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/5 text-center group hover:border-violet-500/30 transition-all duration-300 backdrop-blur-sm">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full text-xs font-bold shadow-lg shadow-violet-600/30">
                   {item.step}
                 </div>
-                <div className="w-12 h-12 mx-auto rounded-xl bg-white/5 flex items-center justify-center mb-4 mt-2 text-violet-400 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 mx-auto rounded-xl bg-white/5 flex items-center justify-center mb-4 mt-2 text-violet-400 group-hover:scale-110 group-hover:bg-violet-500/10 transition-all duration-300">
                   {item.icon}
                 </div>
-                <h3 className="text-base font-semibold text-white mb-2">{item.title}</h3>
+                <h3 className="text-base font-semibold text-white mb-2 group-hover:text-violet-300 transition-colors">{item.title}</h3>
                 <p className="text-sm text-gray-500">{item.desc}</p>
               </div>
             ))}

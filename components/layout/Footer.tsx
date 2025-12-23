@@ -3,8 +3,9 @@ import { Logo } from "@/components/ui/Logo"
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#030303] border-t border-white/5 pt-12 pb-6">
-      <div className="container mx-auto px-4">
+    <footer className="bg-[#030303] border-t border-white/5 pt-12 pb-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-violet-600/5 pointer-events-none" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
@@ -20,17 +21,17 @@ export const Footer = () => {
             <h4 className="text-white font-medium mb-4 text-sm">Навигация</h4>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-violet-400 transition-colors">
                   Скачать
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-violet-400 transition-colors">
                   Магазин
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-violet-400 transition-colors">
                   Помощь
                 </a>
               </li>
@@ -41,17 +42,17 @@ export const Footer = () => {
             <h4 className="text-white font-medium mb-4 text-sm">Информация</h4>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-violet-400 transition-colors">
                   Соглашение
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-violet-400 transition-colors">
                   Конфиденциальность
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-violet-400 transition-colors">
                   Контакты
                 </a>
               </li>
@@ -62,13 +63,13 @@ export const Footer = () => {
         <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-700 text-xs">© 2025 Nexgen Client. Not affiliated with Mojang Studios.</p>
           <div className="flex gap-4">
-            <a href="#" className="text-gray-600 hover:text-white transition-colors">
+            <a href="#" className="text-gray-600 hover:text-violet-400 transition-colors transform hover:scale-110">
               <Twitter size={16} />
             </a>
-            <a href="#" className="text-gray-600 hover:text-white transition-colors">
+            <a href="#" className="text-gray-600 hover:text-violet-400 transition-colors transform hover:scale-110">
               <Youtube size={16} />
             </a>
-            <a href="#" className="text-gray-600 hover:text-white transition-colors">
+            <a href="#" className="text-gray-600 hover:text-violet-400 transition-colors transform hover:scale-110">
               <MessageCircle size={16} />
             </a>
           </div>
