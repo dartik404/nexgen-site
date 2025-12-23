@@ -24,7 +24,7 @@ export const Navbar = ({ user, currentView, onNavigate, onLoginClick, onLogoutCl
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#030303]/90 backdrop-blur-2xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#030303]/95 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-10">
@@ -40,8 +40,8 @@ export const Navbar = ({ user, currentView, onNavigate, onLoginClick, onLogoutCl
                 <button
                   key={item.label}
                   onClick={() => onNavigate(item.view)}
-                  className={`px-4 py-2 text-sm font-medium transition-all duration-200
-                    ${currentView === item.view ? "text-white" : "text-gray-500 hover:text-white"}`}
+                  className={`px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg
+                    ${currentView === item.view ? "text-white bg-white/5" : "text-gray-500 hover:text-white hover:bg-white/5"}`}
                 >
                   {item.label}
                 </button>
@@ -54,7 +54,7 @@ export const Navbar = ({ user, currentView, onNavigate, onLoginClick, onLogoutCl
               <div className="relative">
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="flex items-center gap-3 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all"
+                  className="flex items-center gap-3 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:border-violet-500/30 hover:bg-white/[0.07] transition-all"
                 >
                   <img
                     src={user.avatarUrl || "/placeholder.svg?height=32&width=32&query=avatar"}
@@ -111,7 +111,7 @@ export const Navbar = ({ user, currentView, onNavigate, onLoginClick, onLogoutCl
                 </button>
                 <button
                   onClick={onLoginClick}
-                  className="px-5 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-500 rounded-lg transition-all shadow-lg shadow-violet-600/20"
+                  className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 rounded-lg transition-all shadow-lg shadow-violet-600/25 hover:shadow-violet-500/30"
                 >
                   Регистрация
                 </button>
