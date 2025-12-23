@@ -1,0 +1,5 @@
+{
+  "name": "Nexgen Client",
+  "description": "Next generation Minecraft 1.21.4 utility client with Sodium optimization.",
+  "requestFramePermissions": []
+}
